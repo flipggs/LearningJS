@@ -8,27 +8,40 @@ function is(obj) {
 }
 
 function isNumber(obj) {
-    return is(obj) == "[object Number]";
+    return is(obj) === "[object Number]";
 }
 
 function isString(obj) {
-    return is(obj) == "[object String]";
+    return is(obj) === "[object String]";
 }
 
 function isArray(obj) {
-    return is(obj) == "[object Array]";
+    return is(obj) === "[object Array]";
 }
 
 function isObject(obj) {
-    return is(obj) == "[object Object]";
+    return is(obj) === "[object Object]";
 }
 
 function isBoolen(obj) {
-    return is(obj) == "[object Boolean]";
+    return is(obj) === "[object Boolean]";
 }
 
 function isFunc(obj) {
-    return is(obj) == "[object Function]";
+    return is(obj) === "[object Function]";
 }
 
 console.log(isFunc("function(){}"))
+
+var arr1 = [1, 2, 3];
+
+var arr2 = copyArray(arr1);
+
+console.log("arr1", arr1);
+console.log("arr2", arr2);
+
+console.log(arr2 === arr1);
+
+function copyArray(arr){
+    return Array.prototype.slice.call(arr);
+}
