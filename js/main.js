@@ -45,3 +45,14 @@ console.log(arr2 === arr1);
 function copyArray(arr){
     return Array.prototype.slice.call(arr);
 }
+
+const myPackage = ['cheese', 'eggs', 'milk', 'bread'];
+console.log(...myPackage);
+
+printPackageContents('cheese', 'eggs', 'milk', 'bread');
+
+function printPackageContents(...items) {
+    for (const item of items){
+        console.log(item);
+    }
+}
