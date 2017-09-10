@@ -56,3 +56,12 @@ function printPackageContents(...items) {
         console.log(item);
     }
 }
+
+console.log('fatorial(5) - ', fatorial(5));
+
+function fatorial(value){
+    if (value === 1)
+        return value;
+
+    return value * fatorial(value -1);
+}
