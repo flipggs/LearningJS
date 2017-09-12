@@ -1,67 +1,21 @@
-(function(){
-    console.log("Funcao IIFE - Funcao auto-executavel")
-    console.log("Deve ser executado no inicio do arquivo")
-}());
-
-function is(obj) {
-    return Object.prototype.toString.call(obj);
-}
-
-function isNumber(obj) {
-    return is(obj) === "[object Number]";
-}
-
-function isString(obj) {
-    return is(obj) === "[object String]";
-}
-
-function isArray(obj) {
-    return is(obj) === "[object Array]";
-}
-
-function isObject(obj) {
-    return is(obj) === "[object Object]";
-}
-
-function isBoolen(obj) {
-    return is(obj) === "[object Boolean]";
-}
-
-function isFunc(obj) {
-    return is(obj) === "[object Function]";
-}
-
-console.log(isFunc("function(){}"))
+console.log("\n");
+console.log('Verificar tipo de objeto da forma mais correta');
+console.log('isFunc("function(){}")', isFunc("function(){}"))
+console.log('isString("string")', isString("string"))
 
 var arr1 = [1, 2, 3];
 
 var arr2 = copyArray(arr1);
 
+console.log("\n");
 console.log("arr1", arr1);
+
+console.log("var arr2 = copyArray(arr1)");
+
 console.log("arr2", arr2);
 
-console.log(arr2 === arr1);
+console.log("arr2 === arr1", arr2 === arr1);
 
-function copyArray(arr){
-    return Array.prototype.slice.call(arr);
-}
-
-const myPackage = ['cheese', 'eggs', 'milk', 'bread'];
-console.log(...myPackage);
-
-printPackageContents('cheese', 'eggs', 'milk', 'bread');
-
-function printPackageContents(...items) {
-    for (const item of items){
-        console.log(item);
-    }
-}
-
+console.log("\n");
+console.log("função recursiva para calcular um numero fatorial")
 console.log('fatorial(5) - ', fatorial(5));
-
-function fatorial(value){
-    if (value === 1)
-        return value;
-
-    return value * fatorial(value -1);
-}
