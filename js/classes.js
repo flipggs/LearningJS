@@ -12,7 +12,7 @@ class IceCream extends Dessert{
 
     }
 
-    addToppings(){
-        this.toppings.push(toppings);
+    addToppings(topping){
+        this.toppings.push(topping);
     }
 }
