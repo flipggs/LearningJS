@@ -24,4 +24,6 @@ var iceCream = new IceCream(1, 300);
 iceCream.addToppings(2);
 iceCream.addToppings(1);
 iceCream.addToppings(3);
-console.log('iceCream.Toppings', iceCream.toppings);
+//console.log('iceCream.Toppings', iceCream.toppings);
+
+IceCream.staticMethod();

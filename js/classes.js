@@ -15,4 +15,8 @@ class IceCream extends Dessert{
     addToppings(topping){
         this.toppings.push(topping);
     }
+
+    static staticMethod() {
+        console.log('staticMethod')
+      }
 }
