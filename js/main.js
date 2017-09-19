@@ -26,4 +26,4 @@ iceCream.addToppings(1);
 iceCream.addToppings(3);
 //console.log('iceCream.Toppings', iceCream.toppings);
 
-IceCream.staticMethod();
+//IceCream.staticMethod();
