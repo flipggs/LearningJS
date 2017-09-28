@@ -5,7 +5,8 @@
 * [ArrowFunctions](#ArrowFunctions)
 * [Desctructuring](#Desctructuring)
 * [Spread Operator](#SpreadOperator)
-* [Classes](#Classes)
+* [Set](#Set)
+* [WeakSet](#WeakSet)
 * [Copy Array](#CopyArray)
 * [IIFE](#IIFE)
 * [Symbol](#Symbol)
@@ -22,7 +23,7 @@ As ArrowFunctions são expressões e possuem as seguintes regras:
 ### Exemplo 01
 Retorna o Array com todas as letras maiúsculas
 ```
-const nomes = ['Felipe', 'Siqueira', 'Dev'].map( nome => nome.toUpperCase());
+let nomes = ['Felipe', 'Siqueira', 'Dev'].map( nome => nome.toUpperCase());
 console.log(nomes);
 
 //["FELIPE", "SIQUEIRA", "DEV"]
@@ -32,7 +33,7 @@ console.log(nomes);
 ### Exemplo 02
 Retorna o Array com uma frase
 ```
-const nomes = ['Felipe', 'Siqueira', 'Dev'].map( nome => {
+let nomes = ['Felipe', 'Siqueira', 'Dev'].map( nome => {
     nome = nome.toUpperCase();
     return `${nome} tem ${nome.length} caracteres`;
 });
@@ -45,7 +46,7 @@ console.log(nomes);
  ### Exemplo 03
  Retorna o primeiro número primo de um Array
 ```
-const arr = [1, 6, 8, 2, 4].findIndex((element, index, array) => {
+let arr = [1, 6, 8, 2, 4].findIndex((element, index, array) => {
         let start = 2;
         while (start <= Math.sqrt(element)) {
           if (element % start++ < 1) {
@@ -66,30 +67,30 @@ console.log(arr);
 
 ### Exemplo 01
  ```
-const arr = [10, 20, 30];
+let arr = [10, 20, 30];
 
-const [x, y, z] = arr;
+let [x, y, z] = arr;
 
 console.log(x, y, z);
 //10, 20, 30
 
  ```
 
- ### Exemplo 02
+### Exemplo 02
  ```
-const carro = {  
+let carro = {  
   cor: 'preto',
   peso: 808,
   airbag: true
 };
 
-const {cor, peso, airbag} = carro;
+let {cor, peso, airbag} = carro;
 
 console.log(cor, peso, airbag);
 //preto 808 true
  ```
 
- ### Exemplo 03
+### Exemplo 03
  ```
 function setarTamanho([width = 5, height = 5] = []) {
   return `Largura de ${width}px e altura de ${height}px`;
@@ -112,7 +113,7 @@ setarTamanho();
 
 ```
 function imprimirConteudo(...itens){
-    for (const item of itens){
+    for (let item of itens){
         console.log(item);
     }
 }
@@ -129,11 +130,57 @@ pássaro
 ### Exemplo 02
 
  ```
-const comidas = ['queijo', 'ovos', 'pão'];
-const bebidas = ['leite', 'suco', 'café'];
+let comidas = ['queijo', 'ovos', 'pão'];
+let bebidas = ['leite', 'suco', 'café'];
 
-const alimentos = [...comidas, ...bebidas];
+let alimentos = [...comidas, ...bebidas];
 console.log(alimentos);
 //queijo ovos pão leite suco café
 
  ```
+
+
+## Set <a id="Set"></a>
+
+O Objeto Set é parecido com Array, mas não possuem indices, ou seja, os itens de um Set não podem ser acessados individualmente.
+E também não aceita itens duplicados como em Array.
+Para inserir ou remover itens em um Set, basta usar as funções "add" e "delete".
+A função "has" serve para verificar se um item existe dentro do Set.
+
+### Exemplo 01
+```
+let jogos = new Set(['Super Mario', 'Top Gear', 'Mortal Kombat', 'Super Mario']);
+console.log(jogos);
+//Set {'Super Mario', 'Top Gear', 'Mortal Kombat'}
+```
+
+### Exemplo 02
+```
+let jogos = new Set(['Super Mario', 'Top Gear', 'Mortal Kombat', 'Super Mario']);
+jogos.add('Street Figther');
+console.log(jogos);
+//Set {'Super Mario', 'Top Gear', 'Mortal Kombat', 'Street Fighter'}
+```
+
+### Exemplo 03
+```
+let jogos = new Set(['Super Mario', 'Top Gear', 'Mortal Kombat', 'Super Mario']);
+console.log(jogos.has('Street Figther'));
+//true
+```
+
+
+## WeakSet <a id="WeakSet"></a>
+
+O Objeto WeakSet é parecido com Set, mas só aceita Objetos.
+Não é possível fazer iteração com um WeakSet
+
+### Exemplo 01
+```
+let pessoa01 = { nome: 'Felipe', peso: 60, altura: 1.6};
+let pessoa02 = { nome: 'Lucas', peso: 75, altura: 1.75};
+
+let pessoas = new WeakSet([pessoa01, pessoa02]);
+console.log(pessoas);
+//WeakSet [{ nome: 'Felipe', peso: 60, altura: 1.6}, { nome: 'Lucas', peso: 75, altura: 1.75}]
+```
