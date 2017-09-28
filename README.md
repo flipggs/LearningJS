@@ -1,4 +1,4 @@
-# LeraningJS
+# LearningJS
 
 ## Tópicos estudados
 
