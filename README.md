@@ -4,10 +4,10 @@
 
 * [ArrowFunctions](#ArrowFunctions)
 * [Desctructuring](#Desctructuring)
+* [Spread Operator](#SpreadOperator)
 * [Classes](#Classes)
 * [Copy Array](#CopyArray)
 * [IIFE](#IIFE)
-* [Spread Operator](#SpreadOperator)
 * [Symbol](#Symbol)
 * [Diferença entre tipos em Javascript](#DiffTypeJS)
 
@@ -100,4 +100,40 @@ setarTamanho([10, 10]);
 
 setarTamanho();
 //"Largura de 5x e altura de 5px"
+ ```
+
+
+ ## Spread Operator <a id="SpreadOperator"></a>
+ O Spread Operator serve para passar vários parametros para uma função sem declarar cada parametro separadamente.
+
+ Serve também para concatenar mais de um Array
+
+### Exemplo 01
+
+```
+function imprimirConteudo(...itens){
+    for (const item of itens){
+        console.log(item);
+    }
+}
+
+imprimirConteudo('cão', 'gato', 'pato', 'pássaro');
+/*
+cão
+gato
+pato
+pássaro
+*/
+```
+
+### Exemplo 02
+
+ ```
+const comidas = ['queijo', 'ovos', 'pão'];
+const bebidas = ['leite', 'suco', 'café'];
+
+const alimentos = [...comidas, ...bebidas];
+console.log(alimentos);
+//queijo ovos pão leite suco café
+
  ```
