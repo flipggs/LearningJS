@@ -7,6 +7,7 @@
 * [Spread Operator](#SpreadOperator)
 * [Set](#Set)
 * [WeakSet](#WeakSet)
+* [Map](#Map)
 * [Copy Array](#CopyArray)
 * [IIFE](#IIFE)
 * [Symbol](#Symbol)
@@ -183,4 +184,37 @@ let pessoa02 = { nome: 'Lucas', peso: 75, altura: 1.75};
 let pessoas = new WeakSet([pessoa01, pessoa02]);
 console.log(pessoas);
 //WeakSet [{ nome: 'Felipe', peso: 60, altura: 1.6}, { nome: 'Lucas', peso: 75, altura: 1.75}]
+```
+
+## Map <a id="Map"></a>
+
+Maps são parecidos com Objeto, tendo chave e valor, mas tanto a chave quanto o valor podem ser objetos.
+Para inserir valores a uma váriavel do tipo Map é usado a função "set" e para remover usa-se a função delete.
+
+Se inserir uma informação com a chave repetida o valor será substituido pelo novo valor.
+
+### Exemplo 01
+
+```
+let empregados = new Map();
+
+empregados.set("felipe@email.com", {
+  nome: "Felipe",
+  idade: 26,
+  funcao: "Dev"
+});
+
+empregados.set("lucas@email.com", {
+  nome: "Lucas",
+  idade: 27,
+  funcao: "FrontEnd"
+});
+```
+
+
+### Exemplo 02
+
+```
+empregados.delete("felipe@email.com");
+
 ```
