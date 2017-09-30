@@ -218,3 +218,16 @@ empregados.set("lucas@email.com", {
 empregados.delete("felipe@email.com");
 
 ```
+
+## WeakMap <a id="WeakMap"></a>
+
+Parecido com o Map, mas a chave deve ser obrigatóriamente um objeto
+
+### Exemplo 01
+
+```
+let pessoa = new WeakMap();
+
+pessoa.set({nome: "Felipe", sobrenome: "Siqueira"}, {profissao: "Dev", salario: "$$$"});
+
+```
