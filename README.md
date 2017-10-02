@@ -12,6 +12,7 @@
 * [IIFE](#IIFE)
 * [Symbol](#Symbol)
 * [Promises](#Promises)
+* [Proxy](#Proxy)
 
 ## ArrowFunctions <a id="ArrowFunctions"></a>
 
@@ -314,4 +315,39 @@ myPromise.then(function resolve(objSucesso){
 }, function reject(objErro){
   console.log(objErro);
 });
+```
+
+## Proxy <a id="Proxy"></a>
+
+O Objeto do tipo Proxy serve que um objeto possa responder por outro.
+O construtor do objeto do tipo Proxy recebe dois parametros. 
+1º - Objeto que ele representará
+2º um objeto com os métodos que serão usados no acesso aos dados do primeiro. Este é chamado de handler
+
+### Exemplo 01
+
+```js
+var pessoa = {nome: 'Felipe'};
+var dev = new Proxy(pessoa, {});
+
+console.log(dev.nome);
+//Felipe
+```
+
+### Exemplo 02
+
+```js
+var pessoa = {nome: 'Felipe'};
+var dev = new Proxy(pessoa, {
+  get(target, propName){
+    console.log(target);
+    console.log(propName);
+    return target[propName];
+  }
+});
+
+console.log(dev.nome);
+//{nome: "Felipe"}
+//nome
+//Felipe
 ```
