@@ -11,7 +11,6 @@
 * [Copy Array](#CopyArray)
 * [IIFE](#IIFE)
 * [Symbol](#Symbol)
-* [Diferença entre tipos em Javascript](#DiffTypeJS)
 
 ## ArrowFunctions <a id="ArrowFunctions"></a>
 
@@ -240,4 +239,54 @@ Parecido com o Map, mas a chave deve ser obrigatóriamente um objeto
 ```js
 let pessoa = new WeakMap();
 pessoa.set({nome: "Felipe", sobrenome: "Siqueira"}, {profissao: "Dev", salario: "$$$"});
+```
+
+## Copiar Array <a id="CopyArray"></a>
+
+A forma mais correta para copiar um array é usando a função "Slice", pois uma variável do tipo Array é referenciada com um apontamento de mémoria.
+Por isso se simplesmente associar um váriavel a outra irá somente apontar para o mesmo endereço de mémoria.
+
+### Exemplo 01
+
+```js
+function CopyArray(arr){
+    return Array.prototype.slice.call(arr);
+}
+
+let myArr = [1, 2, 3, 4, 5];
+let myArr2 = myArr;
+let myArr3 = copyArray(myArr);
+
+console.log(myArr === myArr2);
+//true
+
+console.log(myArr === myArr3);
+//false
+```
+
+## Função IIFE <a id="IIFE"></a>
+
+A função IIFE é uma função auto-executavel e deve ser executada no inicio do arquivo
+
+### Exemplo 01
+```js
+(function(){
+  //codigo da função
+}());
+
+```
+
+## Symbol <a id="Symbol"></a>
+
+O Symbol é usado para se ter um objeto com mais de uma própriedade com o mesmo nome
+
+### Exemplo 01
+
+```js
+const bowl1 = {
+    [Symbol('apple')]: { color: 'red', weight: 136.078 },
+    [Symbol('banana')]: { color: 'yellow', weight: 183.15 },
+    [Symbol('orange')]: { color: 'orange', weight: 170.097 },
+    [Symbol('banana')]: { color: 'yellow', weight: 176.845 }
+};
 ```
