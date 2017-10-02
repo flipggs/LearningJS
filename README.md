@@ -11,6 +11,7 @@
 * [Copy Array](#CopyArray)
 * [IIFE](#IIFE)
 * [Symbol](#Symbol)
+* [Promises](#Promises)
 
 ## ArrowFunctions <a id="ArrowFunctions"></a>
 
@@ -289,4 +290,28 @@ const bowl1 = {
     [Symbol('orange')]: { color: 'orange', weight: 170.097 },
     [Symbol('banana')]: { color: 'yellow', weight: 176.845 }
 };
+```
+
+## Promises <a id="Promises"></a>
+
+Promises é uma nova forma de fazer chamadas assincronas.
+Ao se criar uma Promises é passado 2 funções como parametros, uma para retorno com sucesso (resolve) e outra para retorno de erro (reject)
+O retorno das funções são acessados dentro da função "then" da Promise
+
+### Exemplo 01
+
+```js
+let myPromise = new Promise(function(resolve, reject){
+  //caso retorno com erro
+  if (/*condição do erro*/){
+    reject('Erro ao executar Promise');
+  }
+  resolve('Objeto de retorno de sucesso');
+});
+
+myPromise.then(function resolve(objSucesso){
+  console.log(objSucesso);
+}, function reject(objErro){
+  console.log(objErro);
+});
 ```
